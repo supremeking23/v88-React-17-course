@@ -2,6 +2,9 @@
 import './App.css';
 import LikeDetail from './Components/LikeDetail/LikeDetail';
 import PostDetail from './Components/PostDetail/PostDetail';
+import Segment from './Components/Segment/Segment';
+
+import segment_aray from './json_dumps/segment_data';
 
 function App() {
   const date = new Date().toLocaleDateString();
@@ -32,11 +35,13 @@ function App() {
 
   const datas = array_data.map((data) => {
     return(
-      <LikeDetail key={data.id} >
+      <LikeDetail key={data.id}>
         <PostDetail post_detail={data} />
       </LikeDetail>
     );
   });
+
+  const display_segments = segment_aray.map((segment) => <Segment key={segment.id} segment={segment}/>);
 
   return (
     <>
@@ -44,6 +49,8 @@ function App() {
       <p>Time : {time}</p>
 
       {datas}
+
+      {display_segments}
     </>
   );
 }

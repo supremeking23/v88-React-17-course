@@ -1,0 +1,17 @@
+.like_details_container{
+    border: 1px solid #ccc;
+    margin: 0 0 10px;
+    box-shadow: 10px 4px 5px 0px rgba(0,0,0,0.08);
+    padding: 10px 20px;
+    button{
+        background: transparent;
+        border: 1px solid #0FAF93;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: opacity .21s;
+        color: #0FAF93;
+        &:hover{
+            opacity: .8;
+        }
+    }
+}
