@@ -1,0 +1,17 @@
+.post_detail_container{
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px;
+    img{
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        margin: 0 10px 0 0;
+    }
+    h3{
+        margin: 0;
+        span{
+            color: gray;
+        }
+    }
+}

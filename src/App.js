@@ -1,24 +1,50 @@
-import logo from './logo.svg';
+
 import './App.css';
+import LikeDetail from './Components/LikeDetail/LikeDetail';
+import PostDetail from './Components/PostDetail/PostDetail';
 
 function App() {
+  const date = new Date().toLocaleDateString();
+  const time = new Date().toLocaleTimeString();
+
+  const array_data = [
+    {
+      id: 1,
+      name: "Ivan Christian Jay Funcion"
+    },
+    {
+      id: 2,
+      name: "Mavis Vermillion"
+    },
+    {
+      id: 3,
+      name: "Sarah Vermillion"
+    },
+    {
+      id: 4,
+      name: "Rury Ishigami"
+    },
+    {
+      id: 5,
+      name: "Kikyo Shimihu"
+    },
+  ];
+
+  const datas = array_data.map((data) => {
+    return(
+      <LikeDetail key={data.id} >
+        <PostDetail post_detail={data} />
+      </LikeDetail>
+    );
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Hello {date}</h1>
+      <p>Time : {time}</p>
+
+      {datas}
+    </>
   );
 }
 
