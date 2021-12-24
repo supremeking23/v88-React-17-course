@@ -37,7 +37,7 @@ class Geolocation extends React.Component{
         window.navigator.geolocation.getCurrentPosition(
             // to update our state object, we call setState
             (position) => this.setState({latitude: position.coords.latitude, longitude: position.coords.longitude}),
-            (err) => console.log(err) 
+            (err) => this.setState({error_message: err.message})
         );
         
         this.setState({...this.state ,month_int: get_current_month}); // add all key value pair when we set the state again

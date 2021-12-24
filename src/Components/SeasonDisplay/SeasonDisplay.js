@@ -1,11 +1,14 @@
 import React from 'react';
 import "./SeasonDisplay.scss";
 
+
 export default function SeasonDisplay({season}){
     console.log(season);
-    let {latitude, longitude, int_month} = season;
+    let {latitude, longitude, int_month, error_message} = season;
     let display_season_message = "";
     let what_to_render = null;
+
+    console.log(`sdadas ${error_message}`);
  
     
     if(latitude > 0){
@@ -56,7 +59,12 @@ export default function SeasonDisplay({season}){
     
     return(
         <>
-            {what_to_render()}
+            <h2>sd {error_message !== null ? what_to_render() : "Loading"}</h2>
+            <p>{season.error_message}</p>
         </>
     );
+}
+
+SeasonDisplay.defaultProps = {
+    error_message: "Error............",
 }
