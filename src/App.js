@@ -5,6 +5,7 @@ import PostDetail from './Components/PostDetail/PostDetail';
 import Segment from './Components/Segment/Segment';
 import Geolocation from './Components/Geolocation/Geolocation';
 import UserEvents from './Components/UserEvents/UserEvents';
+import FormSubmission from './Components/FormSubmission/FormSubmission';
 
 import segment_aray from './json_dumps/segment_data';
 
@@ -56,6 +57,7 @@ function App() {
       <Geolocation />
 
       <UserEvents />
+      <FormSubmission />
     </>
   );
 }
