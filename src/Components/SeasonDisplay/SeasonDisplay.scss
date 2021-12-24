@@ -1,0 +1,9 @@
+.season_display_container{
+    padding: 20px;
+    &.summer_background{
+        background: #f3872f;
+    }
+    &.winter_background{
+        background: #15b2d3;
+    }
+}
