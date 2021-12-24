@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 
 
+
 // class UserEvents extends React.Component{
 
 //     constructor(props){
@@ -25,16 +26,28 @@ import React,{useState} from "react";
 
 
 // function based
-function UserEvents(){
+function UserEvents(props){
     let [term, setTerm] = useState("");
+    let [message, setMessage] = useState("Password must at least be 4 characters");
+    
     function onInputChange(event){
         setTerm(event.target.value.toUpperCase());
+        if(event.target.value.length >= 4){
+            setMessage("");
+        }
+        else{
+            setMessage("Password must at least be 4 characters");
+        }
     }
     return(
         <div>
             <input type="text" value={term} onChange={onInputChange} />
+            <p>{message}</p>
        </div>
     );
+
+
 }
+
 
 export default UserEvents;
