@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import SeasonDisplay from '../SeasonDisplay/SeasonDisplay';
 
 // function based
 // export default function Geolocation(){
@@ -27,13 +27,26 @@ class Geolocation extends React.Component{
         super(props);
         // This is our state object
         /* This will eventually contan some different properties that are relevan to our app*/
-        this.state = {latitude: null, is_error: false, error_message: null};
+        this.state = {latitude: null, longitude: null, month_int: null, is_error: false, error_message: null};
+    }
+
+    componentDidMount(){
+       
+        let get_current_month = new Date().getMonth(); /* starts with 0 = january and so on*/
 
         window.navigator.geolocation.getCurrentPosition(
             // to update our state object, we call setState
-            (position) => this.setState({latitude: position.coords.latitude}),
+            (position) => this.setState({latitude: position.coords.latitude, longitude: position.coords.longitude}),
             (err) => console.log(err) 
         );
+        
+        this.setState({...this.state ,month_int: get_current_month}); // add all key value pair when we set the state again
+
+        console.log("Component rendered!");
+    }
+
+    componentDidUpdate(){
+        console.log("Component updated!");
     }
 
     // A required react method when using class-based component
@@ -41,8 +54,7 @@ class Geolocation extends React.Component{
         return(
             <div>
                 {this.state.is_error === false ? (<p>Hi {this.state.latitude}</p>) : (<p> {this.state.error}</p>)}
-                
-                <p></p>
+                <SeasonDisplay season={this.state}/>
             </div>
         );
     }
