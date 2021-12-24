@@ -4,6 +4,7 @@ import LikeDetail from './Components/LikeDetail/LikeDetail';
 import PostDetail from './Components/PostDetail/PostDetail';
 import Segment from './Components/Segment/Segment';
 import Geolocation from './Components/Geolocation/Geolocation';
+import UserEvents from './Components/UserEvents/UserEvents';
 
 import segment_aray from './json_dumps/segment_data';
 
@@ -53,6 +54,8 @@ function App() {
 
       {display_segments}
       <Geolocation />
+
+      <UserEvents />
     </>
   );
 }
