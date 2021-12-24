@@ -28,11 +28,11 @@ import React,{useState} from "react";
 function UserEvents(){
     let [term, setTerm] = useState("");
     function onInputChange(event){
-        setTerm(event.target.value);
+        setTerm(event.target.value.toUpperCase());
     }
     return(
         <div>
-            <input type="text" value={term} onChange={onInputChange}/>
+            <input type="text" value={term} onChange={onInputChange} />
        </div>
     );
 }
