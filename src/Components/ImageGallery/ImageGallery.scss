@@ -1,0 +1,17 @@
+.image_gallery_container{
+    padding: 20px;
+    border: 1px solid #e31223;
+
+    ul{
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        li{
+            margin: 5px;
+            img{
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}

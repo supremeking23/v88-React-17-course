@@ -9,11 +9,15 @@ export default function Pokemon() {
     },[]);
 
     const fetchPokemon = async () => {
-        let response =  await api_caller.get("/pokemon");
+        try {
+            let response =  await api_caller.get("/pokemon");
+            let pokemon_lists = response.data.results.map((pokemon, index) => <li key ={index}>{pokemon.name}</li>);
 
-        let pokemon_lists = response.data.results.map((pokemon, index) => <li key ={index}>{pokemon.name}</li>);
-        setPokemons(pokemon_lists);
+            setPokemons(pokemon_lists);
 
+        } catch (error) {
+            console.log("error", error);
+        }
     }
 
     

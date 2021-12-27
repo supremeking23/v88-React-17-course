@@ -7,6 +7,7 @@ import Geolocation from './Components/Geolocation/Geolocation';
 import UserEvents from './Components/UserEvents/UserEvents';
 import FormSubmission from './Components/FormSubmission/FormSubmission';
 import Pokemon from './Components/Pokemon/Pokemon';
+import ImageGallery from './Components/ImageGallery/ImageGallery';
 
 import segment_aray from './json_dumps/segment_data';
 
@@ -61,6 +62,8 @@ function App() {
       <FormSubmission />
 
       <Pokemon />
+
+      <ImageGallery />
     </>
   );
 }
