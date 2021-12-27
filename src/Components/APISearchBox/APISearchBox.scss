@@ -1,7 +1,30 @@
 form{
+    border: 1px solid #ccc;
+    padding: 18px 10px;
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    span{
+        position: absolute;
+        transition: all .1s ease-in-out;
+        transform: translateY(-3px);
+    }
     input{
         width: 100%;
-        padding: 20px;
-        border: 1px solid #ccc;
+        border: none;
+        display: block;
+        &:focus, &:focus-visible, &:not(:placeholder-shown){
+            outline: none;
+            & + span{
+                transform: translateY(-13px);
+            }
+        }
+    }
+    button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
     }
 }
+

@@ -13,7 +13,9 @@ export default function APISearchBox(props) {
     }
     return (
         <form onSubmit={onSubmitSearch} method="POST">
-            <input type="text" onChange={onTextChange} value={seach_term} />
+            <input type="text" onChange={onTextChange} value={seach_term} placeholder=" "/>
+            <span>Search</span>
+            <button type="submit"><i className="search icon"></i></button>
         </form>
     )
 }
