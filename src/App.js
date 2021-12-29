@@ -70,6 +70,8 @@ function App() {
       </ul>
 
       {/* separate Component */}
+
+      
       <Modal
         onClose={() => setOpenModal(false)}
         onOpen={() => setOpenModal(true)}
@@ -80,10 +82,7 @@ function App() {
           <iframe title="Video Player" src={ `https://www.youtube.com/embed/${current_video.video_id}` } />
           <Modal.Description>
             <h2>{current_video.title}</h2>
-            <p>
-              We've found the following gravatar image associated with your e-mail
-              address.
-            </p>
+            <p>{current_video.description}</p>
           </Modal.Description>
         </Modal.Content>
 

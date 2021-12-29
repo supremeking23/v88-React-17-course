@@ -2,14 +2,14 @@ import React from 'react';
 import {  Modal } from 'semantic-ui-react';
 
 export default function YouTubeVideoModal(props){
-
+    console.log(props);
     let [open_modal, setOpenModal] = React.useState(false);
     return (
         <>
             <Modal
-                onClose={() => setOpenModal(false)}
-                onOpen={() => setOpenModal(true)}
-                open={props.trigger_modal}
+                onClose={setOpenModal(false)}
+                onOpen={setOpenModal(true)}
+                open={open_modal}
                 id="video_modal"
                 >
                 <Modal.Content>
@@ -22,7 +22,6 @@ export default function YouTubeVideoModal(props){
                     </p>
                     </Modal.Description>
                 </Modal.Content>
-
             </Modal>           
         </>
     )
